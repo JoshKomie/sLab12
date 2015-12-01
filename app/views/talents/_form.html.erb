@@ -1,0 +1,33 @@
+<%= form_for(@talent) do |f| %>
+  <% if @talent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@talent.errors.count, "error") %> prohibited this talent from being saved:</h2>
+
+      <ul>
+      <% @talent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :First %><br>
+    <%= f.text_field :First %>
+  </div>
+  <div class="field">
+    <%= f.label :Last %><br>
+    <%= f.text_field :Last %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description %>
+  </div>
+  <div class="field">
+    <%= f.label :done %><br>
+    <%= f.check_box :done %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @talent.First %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @talent.Last %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @talent.Description %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @talent.done %>
+</p>
+
+<%= link_to 'Edit', edit_talent_path(@talent) %> |
+<%= link_to 'Back', talents_path %>

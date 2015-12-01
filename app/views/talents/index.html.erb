@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SCRUM Project</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+			<li><a href="users/sign_up">Signup</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<br/><br/><br/><br/>
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Description</th>
+      <th>Done</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talents.each do |talent| %>
+      <tr>
+        <td><%= talent.First %></td>
+        <td><%= talent.Last %></td>
+        <td><%= talent.Description %></td>
+        <td><%= talent.done %></td>
+        <td><%= link_to 'Show', talent %></td>
+        <td><%= link_to 'Edit', edit_talent_path(talent) %></td>
+        <td><%= link_to 'Destroy', talent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</body>
+<br>
+
+<%= link_to 'New Talent', new_talent_path %>
